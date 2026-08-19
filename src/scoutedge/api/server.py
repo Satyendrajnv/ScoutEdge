@@ -18,12 +18,21 @@ from scoutedge.api.schemas import (
 )
 
 
+from scoutedge.api.openapi import get_openapi_spec_dict, get_swagger_ui_html
+
+
 class ScoutEdgeHTTPRequestHandler(BaseHTTPRequestHandler):
     """
     HTTP Request Handler implementing ScoutEdge REST API endpoints.
     """
 
     pipeline = ScoutEdgePipeline()
+
+    def _send_html_response(self, status_code: int, html_content: str):
+        self.send_response(status_code)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.end_headers()
+        self.wfile.write(html_content.encode("utf-8"))
 
     def _send_json_response(self, status_code: int, payload: Dict[str, Any]):
         self.send_response(status_code)
@@ -54,12 +63,18 @@ class ScoutEdgeHTTPRequestHandler(BaseHTTPRequestHandler):
                     "version": __version__,
                     "endpoints": [
                         "GET /api/v1/health",
+                        "GET /api/v1/docs",
+                        "GET /api/v1/openapi.json",
                         "POST /api/v1/evaluate",
                         "POST /api/v1/rating/ser",
                         "POST /api/v1/readiness/edgecare",
                     ],
                 },
             )
+        elif path in ["/api/v1/openapi.json", "/openapi.json"]:
+            self._send_json_response(200, get_openapi_spec_dict())
+        elif path in ["/api/v1/docs", "/docs"]:
+            self._send_html_response(200, get_swagger_ui_html())
         else:
             self._send_json_response(404, {"error": "Endpoint not found", "path": path})
 

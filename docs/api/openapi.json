@@ -1,0 +1,73 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "ScoutEdge REST API Gateway",
+    "description": "AI-Powered Sports Intelligence Infrastructure REST API for athlete evaluation, rating engine (SE-R™), player growth (PGI™), and readiness monitoring (EdgeCare™).",
+    "version": "0.1.0",
+    "contact": {
+      "name": "EdgeSphere Sports Intelligence Private Limited",
+      "url": "https://github.com/Satyendrajnv/ScoutEdge"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000",
+      "description": "Local API Server"
+    }
+  ],
+  "paths": {
+    "/api/v1/health": {
+      "get": {
+        "summary": "Health Check",
+        "description": "Checks API server health status and returns version metadata.",
+        "responses": {
+          "200": {
+            "description": "Server is healthy",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "healthy",
+                  "service": "ScoutEdge REST API Gateway",
+                  "version": "0.1.0"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/evaluate": {
+      "post": {
+        "summary": "Evaluate Athlete",
+        "description": "Ingests performance, scouting, and readiness signals and synthesizes complete decision intelligence.",
+        "responses": {
+          "200": {
+            "description": "Evaluation successful"
+          }
+        }
+      }
+    },
+    "/api/v1/rating/ser": {
+      "post": {
+        "summary": "Calculate SE-R™ Rating",
+        "description": "Computes standalone ScoutEdge Rating Engine (SE-R™) score.",
+        "responses": {
+          "200": {
+            "description": "SE-R Rating calculated"
+          }
+        }
+      }
+    },
+    "/api/v1/readiness/edgecare": {
+      "post": {
+        "summary": "Calculate EdgeCare™ Readiness",
+        "description": "Computes acute:chronic workload ratio (ACWR) and injury risk index.",
+        "responses": {
+          "200": {
+            "description": "Readiness calculated"
+          }
+        }
+      }
+    }
+  }
+}
