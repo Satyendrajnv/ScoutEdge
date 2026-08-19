@@ -28,6 +28,12 @@ from scoutedge.tools.benchmark import PipelineBenchmark
 from scoutedge.cli.main import main as cli_main
 from scoutedge.reports.exporter import ScoutReportExporter
 from scoutedge.spatial.analyzer import PitchZoneAnalyzer, SpatialControlEngine
+from scoutedge.matching.engine import (
+    SquadNeedProfile,
+    CandidateMatchResult,
+    OpportunityMatcher,
+    SquadGapAnalyzer,
+)
 
 __all__ = [
     "AthleteProfile",
@@ -48,4 +54,8 @@ __all__ = [
     "ScoutReportExporter",
     "PitchZoneAnalyzer",
     "SpatialControlEngine",
+    "SquadNeedProfile",
+    "CandidateMatchResult",
+    "OpportunityMatcher",
+    "SquadGapAnalyzer",
 ]
