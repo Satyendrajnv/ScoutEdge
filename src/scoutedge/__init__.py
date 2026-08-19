@@ -34,6 +34,11 @@ from scoutedge.matching.engine import (
     OpportunityMatcher,
     SquadGapAnalyzer,
 )
+from scoutedge.financial.engine import (
+    FinancialContractModel,
+    ValueEfficiencyOutput,
+    ValueEfficiencyEngine,
+)
 
 __all__ = [
     "AthleteProfile",
@@ -58,4 +63,7 @@ __all__ = [
     "CandidateMatchResult",
     "OpportunityMatcher",
     "SquadGapAnalyzer",
+    "FinancialContractModel",
+    "ValueEfficiencyOutput",
+    "ValueEfficiencyEngine",
 ]
