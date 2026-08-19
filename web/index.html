@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScoutEdge Live™ — Sports Intelligence Infrastructure</title>
+    <meta name="description" content="AI-powered sports intelligence infrastructure for athlete evaluation, growth tracking, readiness monitoring, and decision intelligence.">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar Header -->
+        <header class="navbar">
+            <div class="brand">
+                <div class="logo-icon">SE</div>
+                <div class="brand-text">
+                    <span class="title">ScoutEdge Live<span class="tm">™</span></span>
+                    <span class="subtitle">Sports Intelligence Infrastructure</span>
+                </div>
+            </div>
+            
+            <div class="header-controls">
+                <div class="status-indicator">
+                    <span class="dot"></span> Live Intelligence Gateway
+                </div>
+                <div class="athlete-select-wrapper">
+                    <label for="athleteSelect">Athlete Profile:</label>
+                    <select id="athleteSelect" class="styled-select">
+                        <option value="julian_vance">Julian Vance (Attacking Midfield)</option>
+                        <option value="kylian_mbappe">Kylian Mbappe-Vance (Left Winger)</option>
+                        <option value="arda_guler">Arda Guler-Vance (Playmaker)</option>
+                        <option value="florian_wirtz">Florian Wirtz (Advanced Midfield)</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Container -->
+        <main class="dashboard-container">
+            <!-- Executive Decision Banner -->
+            <section class="banner-card glow-banner">
+                <div class="banner-left">
+                    <div class="label">Executive Decision Intelligence Output</div>
+                    <div class="recommendation-badge" id="recBadge">SIGN / HIGH PRIORITY TARGET</div>
+                    <div class="athlete-bio" id="athleteBio">Julian Vance • Attacking Midfield • Apex Youth Academy (U21 National Division)</div>
+                </div>
+                <div class="banner-right">
+                    <div class="fit-score-ring">
+                        <div class="fit-score-val" id="fitScore">87.3</div>
+                        <div class="fit-score-lbl">Overall Fit Score</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3-Column Metrics Grid -->
+            <div class="metrics-grid">
+                <!-- SE-R Rating Engine Card -->
+                <div class="glass-card">
+                    <div class="card-header">
+                        <h3>SE-R™ Rating Engine</h3>
+                        <span class="tag">Performance</span>
+                    </div>
+                    <div class="big-score" id="serRating">92.6 <span class="max">/ 100</span></div>
+                    <div class="percentile-label">Percentile Rank: <strong id="serPercentile">90.4%</strong></div>
+                    
+                    <div class="progress-list">
+                        <div class="progress-item">
+                            <div class="progress-meta"><span>Technical Score</span><span id="serTech">88.0</span></div>
+                            <div class="progress-bar"><div class="fill" id="fillTech" style="width: 88%;"></div></div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-meta"><span>Tactical Score</span><span id="serTact">85.0</span></div>
+                            <div class="progress-bar"><div class="fill" id="fillTact" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-meta"><span>Physical Score</span><span id="serPhys">82.0</span></div>
+                            <div class="progress-bar"><div class="fill" id="fillPhys" style="width: 82%;"></div></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer-note" id="serDriver">
+                        ✓ High technical proficiency observed by scouts
+                    </div>
+                </div>
+
+                <!-- PGI Player Growth Index Card -->
+                <div class="glass-card">
+                    <div class="card-header">
+                        <h3>PGI™ Growth Index</h3>
+                        <span class="tag amber">Longitudinal</span>
+                    </div>
+                    <div class="big-score amber" id="pgiScore">76.0 <span class="max">/ 100</span></div>
+                    <div class="stage-badge" id="pgiStage">Emerging Potential</div>
+                    
+                    <div class="stat-row">
+                        <div class="stat-box">
+                            <span class="stat-lbl">Ceiling Projection</span>
+                            <span class="stat-val" id="pgiCeiling">91.2</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-lbl">Growth Velocity</span>
+                            <span class="stat-val" id="pgiVelocity">+2.4 / match</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer-note" id="pgiDriver">
+                        ✓ Accelerated trajectory over recent match logs
+                    </div>
+                </div>
+
+                <!-- EdgeCare Readiness Card -->
+                <div class="glass-card">
+                    <div class="card-header">
+                        <h3>EdgeCare™ Readiness</h3>
+                        <span class="tag green">Workload & ACWR</span>
+                    </div>
+                    <div class="big-score green" id="edgeReadiness">95.2 <span class="max">/ 100</span></div>
+                    
+                    <div class="stat-row">
+                        <div class="stat-box">
+                            <span class="stat-lbl">ACWR Ratio</span>
+                            <span class="stat-val green" id="edgeACWR">1.00</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-lbl">Injury Risk</span>
+                            <span class="stat-val green" id="edgeRisk">Low Risk</span>
+                        </div>
+                    </div>
+
+                    <div class="progress-item" style="margin-top: 14px;">
+                        <div class="progress-meta"><span>Recommended Mins</span><span id="edgeMins">90 Mins</span></div>
+                        <div class="progress-bar"><div class="fill green" style="width: 100%;"></div></div>
+                    </div>
+
+                    <div class="card-footer-note" id="edgeDriver">
+                        ✓ Optimal acute-to-chronic workload balance
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom 2-Column Split: Financials & Interactive Adjuster -->
+            <div class="split-grid">
+                <!-- Financial Valuation Card -->
+                <div class="glass-card">
+                    <div class="card-header">
+                        <h3>Financial Valuation & Contract Efficiency</h3>
+                        <span class="tag blue">ROI Engine</span>
+                    </div>
+
+                    <div class="financial-val-header">
+                        <div>
+                            <div class="val-cat" id="finCategory">UNDERVALUED OPPORTUNITY</div>
+                            <div class="val-sub">Value-for-Money Index: <strong id="finVfm">100.0 / 100</strong></div>
+                        </div>
+                        <div class="roi-badge" id="finRoi">+15.0% 3-Yr Resale ROI</div>
+                    </div>
+
+                    <div class="stat-row" style="margin-top: 16px;">
+                        <div class="stat-box">
+                            <span class="stat-lbl">Est. Market Value</span>
+                            <span class="stat-val" id="finMarketVal">€12.5M</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-lbl">Weekly Wage</span>
+                            <span class="stat-val" id="finWage">€35,000</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-lbl">Contract Remaining</span>
+                            <span class="stat-val" id="finContract">1.0 Years</span>
+                        </div>
+                    </div>
+
+                    <div class="reason-list" id="explainReasons">
+                        <div class="reason-chip">✓ High performance-to-cost ratio (7.59 SE-R pts / €1M)</div>
+                        <div class="reason-chip">✓ Low workload injury risk profile (EdgeCare™)</div>
+                    </div>
+                </div>
+
+                <!-- Interactive Signal Adjuster Card -->
+                <div class="glass-card">
+                    <div class="card-header">
+                        <h3>Interactive Signal Adjuster</h3>
+                        <span class="tag">Simulate Inputs</span>
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            <span>Pass Accuracy Stat:</span>
+                            <span id="lblPassAcc">90%</span>
+                        </div>
+                        <input type="range" id="sliderPassAcc" min="50" max="99" value="90" class="styled-slider">
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            <span>Scout Technical Rating:</span>
+                            <span id="lblScoutTech">88</span>
+                        </div>
+                        <input type="range" id="sliderScoutTech" min="50" max="99" value="88" class="styled-slider">
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            <span>Acute Workload (7-Day Mins):</span>
+                            <span id="lblWorkload">340 Mins</span>
+                        </div>
+                        <input type="range" id="sliderWorkload" min="150" max="600" value="340" class="styled-slider">
+                    </div>
+
+                    <button id="btnRecalculate" class="action-btn">Re-Synthesize Intelligence</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
