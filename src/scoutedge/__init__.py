@@ -27,6 +27,7 @@ from scoutedge.tools.generator import SyntheticDataGenerator
 from scoutedge.tools.benchmark import PipelineBenchmark
 from scoutedge.cli.main import main as cli_main
 from scoutedge.reports.exporter import ScoutReportExporter
+from scoutedge.spatial.analyzer import PitchZoneAnalyzer, SpatialControlEngine
 
 __all__ = [
     "AthleteProfile",
@@ -45,4 +46,6 @@ __all__ = [
     "PipelineBenchmark",
     "cli_main",
     "ScoutReportExporter",
+    "PitchZoneAnalyzer",
+    "SpatialControlEngine",
 ]
