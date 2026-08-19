@@ -1,0 +1,5 @@
+# ScoutEdge Dependencies
+# Core models utilize Python standard library dataclasses for zero-dependency portability.
+
+# Optional extensions and testing framework:
+pytest>=7.0.0
