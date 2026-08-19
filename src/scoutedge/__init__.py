@@ -22,6 +22,7 @@ from scoutedge.readiness.edgecare import EdgeCareEngine
 from scoutedge.resume.live_resume import LiveResumeBuilder
 from scoutedge.decision.engine import DecisionEngine
 from scoutedge.core.pipeline import ScoutEdgePipeline
+from scoutedge.api.server import create_scoutedge_app
 
 __all__ = [
     "AthleteProfile",
@@ -35,4 +36,5 @@ __all__ = [
     "LiveResumeBuilder",
     "DecisionEngine",
     "ScoutEdgePipeline",
+    "create_scoutedge_app",
 ]
