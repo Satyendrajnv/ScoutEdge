@@ -25,6 +25,7 @@ from scoutedge.core.pipeline import ScoutEdgePipeline
 from scoutedge.api.server import create_scoutedge_app
 from scoutedge.tools.generator import SyntheticDataGenerator
 from scoutedge.tools.benchmark import PipelineBenchmark
+from scoutedge.cli.main import main as cli_main
 
 __all__ = [
     "AthleteProfile",
@@ -41,4 +42,5 @@ __all__ = [
     "create_scoutedge_app",
     "SyntheticDataGenerator",
     "PipelineBenchmark",
+    "cli_main",
 ]
